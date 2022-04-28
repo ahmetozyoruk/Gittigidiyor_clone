@@ -1,4 +1,5 @@
 # Gittigidiyor_clone
+<img src="./resim/1.jpg" width="48">
 ![Resim](./resim/1.jpg  =250x250)
 ![Resim](./resim/2.jpg  =250x250)
 ![Resim](./resim/3.jpg  =250x250)
