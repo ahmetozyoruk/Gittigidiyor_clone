@@ -1,2 +1,2 @@
 # Gittigidiyor_clone
-![Resim](./resim/photo_2022-04-28_09-12-11.jpg?raw=true)
+![Resim](./resim/*.jpg | width=25)
