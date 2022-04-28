@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.GirisYapPage">
+    <StackLayout
+        Padding="20">
+        <Label
+                Text="Giris Yap"
+                FontSize="{StaticResource FontSize20}"
+                TextColor="{StaticResource BlackColor}"
+                Margin="10,2"/>
+        <Entry
+            x:Name="EntryKullanici"
+            AutomationId="1" HeightRequest="70" 
+            FontSize="{StaticResource FontSize16}" 
+            Placeholder="Kullanici adi veya e-posta adresi" 
+            Grid.Column="0" 
+            IsPassword="False"/>
+        <Entry
+            x:Name="EntrySifre"
+            HeightRequest="70" 
+            FontSize="{StaticResource FontSize16}" 
+            Placeholder="Sifreniz" 
+            Grid.Column="0" 
+            IsPassword="False"/>
+        <Grid ColumnDefinitions="*,*" Margin="5,20">
+            <Label
+                Grid.Column="0"
+                Text="Sifremi Unuttum"
+                FontSize="{StaticResource FontSize13}"
+                TextColor="{StaticResource SoftBlueColor}"/>
+            <Button
+                Grid.Column="1"
+                Text="Giris Yap"
+                BackgroundColor="{StaticResource SoftBlueColor}"
+                TextColor="{StaticResource WhiteColor}"
+                Clicked="Button_Clicked"/>
+
+        </Grid>
+
+
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.BaseViews.UyeOlPage"
+             xmlns:helpers="clr-namespace:GittiGidiyor.Helpers">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20">
+            <Label
+                Text="Uye Ol"
+                FontSize="{StaticResource FontSize20}"
+                TextColor="{StaticResource BlackColor}"
+                Margin="10,2"/>
+            <Grid ColumnDefinitions="*,*" HeightRequest="100">
+                <Entry  
+                    x:Name="Ad"
+                    HeightRequest="70" 
+                    FontSize="{StaticResource FontSize16}" 
+                    Placeholder="Ad*" 
+                    Grid.Column="0" 
+                    IsPassword="False"/>
+                <Entry  
+                    x:Name="Soyad"
+                    HeightRequest="70" 
+                    FontSize="{StaticResource FontSize16}" 
+                    Placeholder="Soyad*" 
+                    Grid.Column="1" 
+                    IsPassword="False"/>
+            </Grid>
+            <Entry  
+                x:Name="Email"
+                HeightRequest="70" 
+                FontSize="{StaticResource FontSize16}" 
+                Placeholder="Eposta adresiniz*" 
+                Grid.Column="0" 
+                IsPassword="False"/>
+            <Entry  
+                x:Name="Sifre"
+                HeightRequest="70" 
+                FontSize="{StaticResource FontSize16}" 
+                Placeholder="Sifreniz*" 
+                Grid.Column="0" 
+                IsPassword="True"/>
+            <Grid ColumnDefinitions="Auto,Auto" Margin="0,5" HeightRequest="40">
+                <Label
+                    TextColor="Yellow"
+                    Grid.Column="0"
+                    FontFamily="FAsolid"
+                    FontSize="{StaticResource FontSize20}"
+                    Text="{x:Static helpers:FAIcons.ExclamationTriangle}"/>
+                <Label
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text="Şifreniz en az 6 en fazla 16 karakterden oluşmalıdır"
+                    FontSize="{StaticResource FontSize13}"/>
+            </Grid>
+            <Grid ColumnDefinitions="Auto,Auto" Margin="0,5" HeightRequest="40">
+                <Label
+                    TextColor="Yellow"
+                    Grid.Column="0"
+                    FontFamily="FAsolid"
+                    FontSize="{StaticResource FontSize20}"
+                    Text="{x:Static helpers:FAIcons.ExclamationTriangle}"/>
+                <Label
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text="Şifreniz en az 1 harf ve 1 rakam içermelidir"
+                    FontSize="{StaticResource FontSize13}"/>
+            </Grid>
+            <Label
+                    Margin="0,2,0,3"
+                    VerticalOptions="Center"
+                    Text="Cep telefonu numaranız*"
+                    FontSize="{StaticResource FontSize13}"/>
+            <Entry  
+                x:Name="Tel"
+                HeightRequest="60" 
+                TextColor="{StaticResource BlackColor}"
+                FontSize="{StaticResource FontSize16}" 
+                Placeholder="+90(___)___ __ __" 
+                Grid.Column="0" 
+                IsPassword="False"/>
+            <Grid ColumnDefinitions="Auto,*">
+                <CheckBox
+                    Grid.Column="0"
+                    IsChecked="False" 
+                    Color="{StaticResource SoftBlueColor}"/>
+                <Label
+                    HeightRequest="75"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Text="Gitti Gidiyor'un bana ticari elektronik ileti göndermesine, kişisel verilerimi pazarlama faaliyetleri için işlemesine ve destek aldığı tedarikçileriyle paylaşmasına izin veriyorum. "
+                    FontSize="{StaticResource FontSize12}"/>
+            </Grid>
+            <Label
+                    Margin="0,5"
+                    VerticalOptions="Center"
+                    Text="Kayıt olarak Kullanıcı Sözleşmesini okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz. Kişisel verilerinizin işlenmesine ilişkin olarak lütfen Gizlilik Politikasını inceleyiniz. "
+                    FontSize="{StaticResource FontSize13}"/>
+            <Button
+                Text="Uye Ol"
+                BackgroundColor="{StaticResource SoftBlueColor}"
+                TextColor="{StaticResource WhiteColor}"
+                CornerRadius="10"
+                Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

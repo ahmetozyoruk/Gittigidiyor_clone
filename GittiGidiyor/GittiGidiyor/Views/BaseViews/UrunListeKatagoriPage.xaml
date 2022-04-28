@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.BaseViews.UrunListeKatagoriPage"
+             xmlns:templates="clr-namespace:GittiGidiyor.Views.Templates"
+             xmlns:views="clr-namespace:GittiGidiyor.Views">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--<Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource Futura}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="20, 20, 0, 12" />
+            </Style>-->
+            <DataTemplate x:Key="UrunDataTemplate">
+                <templates:UrunDataTemplate/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid 
+            RowDefinitions="Auto,*">
+            <Grid ColumnDefinitions="Auto,Auto,Auto" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                    <Button
+                            Grid.Column="0"
+                                 Text="Price Sirala"
+                                 BorderColor="{StaticResource SoftBlueColor}"
+                                 BackgroundColor="{StaticResource WhiteColor}"
+                        Padding="3"
+                                 TextColor="{StaticResource SoftBlueColor}"
+                                 Margin="5,3,0,0"
+                                 Clicked="PriceSirala"
+                                 VerticalOptions="Center"
+                                 HeightRequest="25"
+                                 WidthRequest="70"/>
+                    <Button
+                            Grid.Column="1"
+                                 Text="Name Sirala"
+                                 BorderColor="{StaticResource SoftBlueColor}"
+                                Padding="3"
+                                 BackgroundColor="{StaticResource WhiteColor}"
+                                 TextColor="{StaticResource SoftBlueColor}"
+                                 VerticalOptions="Center"
+                                 Clicked="NameSirala"
+                                 HeightRequest="25"
+                                 Margin="5,3,0,0"
+                                 WidthRequest="70"/>
+                    <Picker 
+                        x:Name="pickerUretici"
+                        Grid.Column="2"
+                        Title="Uretici"
+                          TitleColor="{StaticResource SoftBlueColor}"
+                        SelectedIndexChanged="Picker_SelectedIndexChanged"
+                        
+                        FontSize="{StaticResource FontSize12}"
+                        WidthRequest="100"/>
+                </Grid>
+            <ScrollView
+                    Grid.Row="1">
+                    <CollectionView
+                        x:Name="Collection"
+                    ItemsSource="{Binding Urunler}"
+                    ItemTemplate="{StaticResource UrunDataTemplate}"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedUrun, Mode=TwoWay}"
+                    SelectionChangedCommand="{Binding SelectedCommand}"
+                    Margin="5,5">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout
+                            Orientation="Vertical"
+                            Span="2"/>
+                        </CollectionView.ItemsLayout>
+                    </CollectionView>
+                </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
+            <!--SelectionChangedCommand="{Binding SelectedCommand}"-->

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.BaseViews.SonraAlicaklarimPage"
+             xmlns:templates="clr-namespace:GittiGidiyor.Views.Templates"
+             BackgroundColor="{StaticResource BackgroundColor}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <DataTemplate x:Key="SonraAlacaklarimItemTemplate">
+                <ViewCell>
+                    <templates:SonraAlacaklarimItemTemplate />
+                </ViewCell>
+            </DataTemplate>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+            <Grid RowDefinitions="6*,*" >
+            <ScrollView
+                    Grid.Row="0">
+                <ListView
+                    ItemsSource="{Binding SonraAlacaklarim}"
+                    ItemTemplate="{StaticResource SonraAlacaklarimItemTemplate}"
+                    HasUnevenRows="True"
+                    SeparatorVisibility="Default"
+                    SeparatorColor="{StaticResource SoftGreyColor}"
+                    SelectionMode="None"
+                    Margin="0,6">
+                </ListView>
+            </ScrollView>
+            <StackLayout
+                Orientation="Horizontal"
+                HeightRequest="210"
+                HorizontalOptions="Center"
+                Grid.Row="1">
+                <Label
+                    Text="Toplam Ucret: "
+                    FontSize="{StaticResource FontSize18}"
+                    TextColor="{StaticResource BlackColor}"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"/>
+                <Label
+                    x:Name="ToplamUcret"
+                    FontSize="{StaticResource FontSize18}"
+                    TextColor="{StaticResource BlackColor}"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"/>
+                <Button
+                    Text="Ode"
+                    WidthRequest="100"
+                    HeightRequest="30"
+                    CornerRadius="20"
+                    Padding="2"
+                    BackgroundColor="{StaticResource WhiteColor}"
+                    BorderWidth="3"
+                    BorderColor="{StaticResource SoftBlueColor}"
+                    TextColor="{StaticResource SoftBlueColor}"
+                    VerticalOptions="Center"/>
+            </StackLayout>
+            </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

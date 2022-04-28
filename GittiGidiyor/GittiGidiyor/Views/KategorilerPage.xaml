@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.KategorilerPage"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             xmlns:helpers="clr-namespace:GittiGidiyor.Helpers"
+             Shell.NavBarIsVisible="False">
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="SettingsStyle">
+                <Setter Property="FontSize" Value="Medium"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,Auto">
+            <!--TitileView Piece-->
+            <Grid RowDefinitions="Auto,Auto" Grid.Row="0" BackgroundColor="{StaticResource TabbarColor}">
+                <Image Grid.Row="0" Source="logo.png" HeightRequest="60" BackgroundColor="Transparent"/>
+
+                <SearchBar Grid.Row="1" Placeholder="Search items..."
+                        HeightRequest="60"
+                           CancelButtonColor="{StaticResource TabbarColor}"
+                           PlaceholderColor="{StaticResource BlackColor}"
+                           TextColor="{StaticResource BlackColor}"
+                           TextTransform="Lowercase"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Medium"
+                           FontAttributes="Italic" />
+                <!--<ListView Grid.Row="2" x:Name="searchResults" SizeChanged="searchResults_SizeChanged"/>-->
+            </Grid>
+            <ScrollView
+                BackgroundColor="{StaticResource TabbarColor}"
+                Grid.Row="1"
+                 Orientation="Vertical">
+                <ListView x:Name="listview" Header="" 
+                          ItemsSource="{Binding Kategoriler}" 
+                          SeparatorVisibility="Default"
+                          ItemSelected="listview_ItemSelected">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <ContentView BackgroundColor="{StaticResource BackgroundColor}">
+                                <Label Margin="10" 
+                                       HorizontalOptions="StartAndExpand" 
+                                       FontSize="{x:StaticResource FontSize20}" 
+                                       Text="Kategoriler"  
+                                       HeightRequest="30"
+                                       TextColor="{StaticResource BlackColor}"/>
+                            </ContentView>
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                
+                                <Grid ColumnDefinitions="Auto,*">
+                                    <Label Grid.Column="0" Text="{Binding text}" VerticalOptions="Center" TextColor="Black" Margin="15,0"  />
+                                    <Label
+                                        Grid.Column="1"
+                                        FontFamily="FAsolid"
+                                        VerticalOptions="Center"
+                                        Text="{x:Static helpers:FAIcons.ChevronRight}"
+                                        TextColor="{StaticResource SecondGrayColor}"
+                                        HorizontalTextAlignment="End"
+                                        FontSize="Small"
+                                        Margin="15,0"
+                                        />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Controls.KampanyalarKesfetView"
+             xmlns:helpers="clr-namespace:GittiGidiyor.Helpers">
+    <ContentView.Content>
+        <Grid RowDefinitions="*,Auto">
+            <CarouselView
+                Grid.Row="0"
+                Loop="False"
+                PeekAreaInsets="20">
+                <!--IndicatorView="indicatorView"-->
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Item One</x:String>
+                        <x:String>Item Two</x:String>
+                        <x:String>Item Three</x:String>
+                    </x:Array>
+                </CarouselView.ItemsSource>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,17,0,17">
+                            <Frame
+                                Padding="0"
+                                CornerRadius="8"
+                                HasShadow="True"
+                                WidthRequest="320"
+                                BackgroundColor="{StaticResource SoftGreyColor}">
+                                <Image
+                                    Aspect="AspectFill"
+                                    Source="https://picsum.photos/320/320"/>
+                            </Frame>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="CurrentItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value="1.0" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="PreviousItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value=".95" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="NextItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value=".95" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="DefaultItem">
+                                        <VisualState.Setters>
+                                            <Setter Property="Scale" Value=".95" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <!--<IndicatorView
+                x:Name="indicatorView"
+                Grid.Row="1"
+                HorizontalOptions="Center"
+                IndicatorColor="#ADB4BD"
+                IndicatorSize="10"
+                SelectedIndicatorColor="#5D6578" />-->
+        </Grid>
+    </ContentView.Content>
+</ContentView>

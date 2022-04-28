@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.Templates.SonraAlacaklarimItemTemplate">
+    <ContentView.Content>
+        <ScrollView>
+        <Grid
+            BackgroundColor="{StaticResource WhiteColor}"
+            ColumnDefinitions="Auto,*" 
+            HeightRequest="100" 
+            VerticalOptions="CenterAndExpand">
+            <Image
+                Grid.Column="0"
+                Source="{Binding ProductPicUrl}"
+                Aspect="AspectFill"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Margin="10,10,10,0"
+                HeightRequest="60"
+                WidthRequest="40"/>
+            <StackLayout Grid.Column="1">
+                <Label 
+                                    Text="{Binding SupplierName}" 
+                                    FontSize="{x:StaticResource FontSize12}"
+                                    TextColor="{x:StaticResource BlackColor}"/>
+                <Label 
+                                    x:Name="nameLabel"
+                                    Text="{Binding Name}" 
+                                    FontSize="{x:StaticResource FontSize14}"
+                                    TextColor="{x:StaticResource BlackColor}"/>
+                <Label 
+                                    Text="{Binding Price,StringFormat='{0}TL'}" 
+                                    FontSize="{x:StaticResource FontSize18}"
+                                    TextColor="{x:StaticResource BlackColor}"/>
+                <Grid ColumnDefinitions="Auto,Auto,Auto">
+                        <Button
+                            Grid.Column="0"
+                            Text="Sil" 
+                            FontSize="{x:StaticResource FontSize12}"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="{StaticResource WhiteColor}"
+                            Padding="3"
+                            TextColor="{StaticResource SoftBlueColor}"/>
+                        <!--<Label 
+                                        Grid.Column="0"
+                                        Text="Sil" 
+                                        FontSize="{x:StaticResource FontSize12}"
+                                        TextColor="{x:StaticResource SoftBlueColor}"/>-->
+                    <Label 
+                                        Grid.Column="1"
+                                        Text=" | " 
+                                        FontSize="{x:StaticResource FontSize12}"
+                                        TextColor="{x:StaticResource SoftBlueColor}"/>
+                        <Button
+                            Grid.Column="2"
+                            Text="Sepete Ekle" 
+                            Clicked="Button_Clicked_1"
+                            FontSize="{x:StaticResource FontSize12}"
+                            BackgroundColor="{StaticResource WhiteColor}"
+                            Padding="3"
+                            TextColor="{StaticResource SoftBlueColor}"/>
+                    
+                        <!--<Label 
+                                        Grid.Column="2"
+                                        Text="Sepete Ekle" 
+                                        FontSize="{x:StaticResource FontSize12}"
+                                        TextColor="{x:StaticResource SoftBlueColor}"/>-->
+
+                </Grid>
+            </StackLayout>
+        </Grid>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

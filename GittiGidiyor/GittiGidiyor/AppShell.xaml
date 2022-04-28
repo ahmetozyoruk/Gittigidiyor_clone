@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:GittiGidiyor.Views"
+       xmlns:baseviews="clr-namespace:GittiGidiyor.Views.BaseViews"
+       xmlns:helpers="clr-namespace:GittiGidiyor.Helpers"
+       Title="GittiGidiyor"
+       x:Class="GittiGidiyor.AppShell">
+        
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource TabbarColor}" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource PrimaryBlackColor}" />
+                <Setter Property="Shell.DisabledColor" Value="#FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource PrimaryBlackColor}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource TabbarColor}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#838183"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="#838183"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Title="Kesfet"
+             Route="KesfetPage"
+             Shell.NavBarIsVisible="False"             >
+            <Tab.Icon>
+                <FontImageSource FontFamily="FAsolid"
+                                     Glyph="{x:Static helpers:FAIcons.Store}"/>
+            </Tab.Icon>
+            <ShellContent
+                ContentTemplate="{DataTemplate local:KesfetPage}"/>
+        </Tab>
+        <Tab Title="Kategoriler"
+             Route="KategorilerPage"
+             Shell.NavBarIsVisible="False"             >
+            <Tab.Icon>
+                <FontImageSource FontFamily="FAsolid"
+                                     Glyph="{x:Static helpers:FAIcons.Search}"/>
+            </Tab.Icon>
+            <ShellContent
+                ContentTemplate="{DataTemplate local:KategorilerPage}"/>
+        </Tab>
+        <Tab Title="Sepetim"
+             Route="SepetimPage"
+             Shell.NavBarIsVisible="False"             >
+            <Tab.Icon>
+                <FontImageSource FontFamily="FAsolid"
+                                     Glyph="{x:Static helpers:FAIcons.ShoppingCart}"/>
+            </Tab.Icon>
+            <!--<ShellContent
+                ContentTemplate="{DataTemplate local:SepetimPage}"/>-->
+            <ShellContent
+                Title="Sepetim"
+                ContentTemplate="{DataTemplate local:SepetimPage}"/>
+            <ShellContent
+                Title="Sonra Alacaklarim"
+                ContentTemplate="{DataTemplate baseviews:SonraAlicaklarimPage}"/>
+        </Tab>
+        <Tab Title="GirisYap"
+             Route="GirisYapPage"
+             Shell.NavBarIsVisible="False"             >
+            <Tab.Icon>
+                <FontImageSource FontFamily="FAsolid"
+                                     Glyph="{x:Static helpers:FAIcons.UserCircle}"/>
+            </Tab.Icon>
+            <ShellContent
+                Title="Giris Yap"
+                ContentTemplate="{DataTemplate local:GirisYapPage}"/>
+            <ShellContent
+                Title="Uye Ol"
+                ContentTemplate="{DataTemplate baseviews:UyeOlPage}"/>
+        </Tab>
+        
+    </TabBar>
+
+</Shell>

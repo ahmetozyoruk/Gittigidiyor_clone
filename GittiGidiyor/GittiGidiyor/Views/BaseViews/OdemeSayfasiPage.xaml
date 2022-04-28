@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.BaseViews.OdemeSayfasiPage"
+             xmlns:control="clr-namespace:GittiGidiyor.Controls">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="ListTemplate">
+                <ViewCell>
+                    <Grid
+                        x:Name="expandGrid"
+                    BackgroundColor="{StaticResource WhiteColor}"
+                    ColumnDefinitions="Auto,*" 
+                    HeightRequest="70"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="300">
+                        <Image
+                        Grid.Column="0"
+                        Source="{Binding ProductPicUrl}"
+                        Aspect="AspectFill"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        Margin="10,10,10,0"
+                        HeightRequest="60"
+                        WidthRequest="40"/>
+                        <StackLayout Grid.Column="1" Spacing="1">
+                            <Label 
+                                            Text="{Binding SupplierName}" 
+                                            FontSize="{x:StaticResource FontSize12}"
+                                            TextColor="{x:StaticResource BlackColor}"/>
+                            <Label 
+                                            Text="{Binding Name}" 
+                                            FontSize="{x:StaticResource FontSize16}"
+                                            TextColor="{x:StaticResource BlackColor}"/>
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="ListTemplateExpanded">
+                <ViewCell>
+                    <Grid
+                        BackgroundColor="{StaticResource WhiteColor}"
+                        ColumnDefinitions="Auto,*" 
+                        VerticalOptions="CenterAndExpand">
+                        <Grid
+                                Grid.Row="0"
+                                ColumnDefinitions="Auto,*" 
+                                HeightRequest="70"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="300">
+                            <Image
+                                    Grid.Column="0"
+                                    Source="{Binding ProductPicUrl}"
+                                    Aspect="AspectFill"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Start"
+                                    Margin="10,10,10,0"
+                                    HeightRequest="60"
+                                    WidthRequest="40"/>
+                            <StackLayout Grid.Column="1" Spacing="1">
+                                <Label 
+                                                        Text="{Binding SupplierName}" 
+                                                        FontSize="{x:StaticResource FontSize12}"
+                                                        TextColor="{x:StaticResource BlackColor}"/>
+                                <Label 
+                                                        Text="{Binding Name}" 
+                                                        FontSize="{x:StaticResource FontSize16}"
+                                                        TextColor="{x:StaticResource BlackColor}"/>
+                            </StackLayout>
+                        </Grid>
+                        <StackLayout
+                            Grid.Row="1"
+                            HeightRequest="120"
+                             WidthRequest="300">
+                            <Label
+                                Text="Yorum Yap:"
+                                FontSize="{StaticResource FontSize12}"
+                                TextColor="{StaticResource BlackColor}"
+                                HorizontalOptions="Start"
+                                Margin="1,0,0,3"
+                                />
+                            <Entry
+                                FontSize="Small"
+                                TextColor="{StaticResource BlackColor}"
+                                />
+
+
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid
+            RowDefinitions="*,Auto">
+            <Grid
+                Grid.Row="0"
+                RowDefinitions="Auto,*">
+                <Label
+                    Grid.Row="0"
+                    Text="Yorum Yap"
+                    FontSize="{StaticResource FontSize18}"
+                    TextColor="{StaticResource BlackColor}"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"/>
+                <ScrollView
+                    Grid.Row="1"
+                    Margin="10"
+                    HorizontalOptions="CenterAndExpand">
+                    <ListView
+                            x:Name="Liste"
+                            ItemTemplate="{StaticResource ListTemplate}"
+                            HasUnevenRows="True"
+                            SeparatorVisibility="Default"
+                            ItemSelected="Liste_ItemSelected"
+                            SeparatorColor="{StaticResource SoftGreyColor}"
+                            SelectionMode="None"
+                            Margin="0,6"/>
+                </ScrollView>
+
+
+            </Grid>
+
+            <StackLayout
+                    Orientation="Horizontal"
+                    HeightRequest="60"
+                    HorizontalOptions="Center"
+                    Grid.Row="1">
+                <Label
+                        x:Name="ToplamUcret"
+                        FontSize="{StaticResource FontSize18}"
+                        TextColor="{StaticResource BlackColor}"
+                        FontAttributes="Bold"
+                        VerticalOptions="Center"
+                    HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

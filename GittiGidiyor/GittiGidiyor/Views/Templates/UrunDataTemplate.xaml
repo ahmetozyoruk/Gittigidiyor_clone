@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.Templates.UrunDataTemplate">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="PriceStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSize20}" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="Margin" Value="0, 10, 0,10 " />
+            </Style>
+            <Style x:Key="FirsatStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackgroundColor}"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="{StaticResource FontSize24}"/>
+                <Setter Property="TextColor" Value="{StaticResource SecondGrayColor}"/>
+                <Setter Property="Margin" Value="10,5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+        <Grid
+            BackgroundColor="{StaticResource SoftGreyColor}"
+            HeightRequest="440">
+            <Grid
+                    BackgroundColor="{StaticResource WhiteColor}"
+                    Margin="0,0,1,1"
+                    Padding="5"
+                    HeightRequest="440"
+                    RowSpacing="0"
+                    RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                <Image
+                        Source="{Binding ProductPicUrl}"
+                        Aspect="AspectFill"
+                        Grid.Row="0"
+                        HeightRequest="150"
+                        WidthRequest="150"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="4"
+                        />
+                <!--<BoxView 
+                        BackgroundColor="{StaticResource SoftGreyColor}"
+                        Grid.Row="0"
+                        HeightRequest="150"
+                        WidthRequest="150"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="4"
+                        />-->
+                <Label Grid.Row="1" Text="Gunun Firsati" 
+                           TextColor="{StaticResource BlackColor}"
+                           FontSize="{StaticResource FontSize16}"/>
+                <Label
+                        Grid.Row="2"
+                        Text="{Binding Price, StringFormat='{0:C0}'}"
+                        Style="{StaticResource PriceStyle}"/>
+                <Label
+                        Grid.Row="3"
+                        Text="Ucretsiz Kargo"
+                        TextColor="{StaticResource BlackColor}"
+                        FontSize="{StaticResource FontSize14}"/>
+                <Label
+                        Grid.Row="4"
+                        Text="{Binding Name}"
+                        TextColor="{StaticResource BlackColor}"
+                        FontSize="{StaticResource FontSize18}"
+                        Margin="0,5,0,5"
+                        />
+                <ContentView
+                    Grid.Row="5"
+                    HeightRequest="70">
+                <Label
+                        Text="{Binding Description}"
+                        TextColor="{StaticResource SoftGreyColor}"
+                        FontSize="{StaticResource FontSize12}"
+                        Margin="0,5,0,5"
+                        />
+                </ContentView>
+                <Button
+                         Grid.Row="6"
+                        Text="Secenekleri Gor"
+                        VerticalOptions="Center"
+                        HorizontalOptions="CenterAndExpand"/>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

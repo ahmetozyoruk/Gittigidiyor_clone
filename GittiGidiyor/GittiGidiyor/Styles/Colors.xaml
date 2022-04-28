@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Styles.Colors">
+
+    <!-- Colors -->
+    <Color x:Key="SecondGrayColor">#858585</Color>
+    <Color x:Key="PrimaryBlackColor">#181818</Color>
+    <Color x:Key="SoftBlueColor">#2E5DEB</Color>
+    <Color x:Key="BackgroundColor">#F7F7F7</Color>
+    <Color x:Key="TitleViewColor">#FFFFFF</Color>
+    <Color x:Key="WhiteColor">#FFFFFF</Color>
+    <Color x:Key="BlackColor">#222222</Color>
+    <Color x:Key="GreenColor">#35B459</Color>
+    <Color x:Key="SoftGreyColor">#8B8B8B</Color>
+    <Color x:Key="TabbarColor">#FFFFFF</Color>
+    <Color x:Key="TabIndicatorColor">#2959E7</Color>
+    <Color x:Key="ArrowColor">#2050DD</Color>
+    
+</ResourceDictionary>

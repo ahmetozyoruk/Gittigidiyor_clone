@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.Templates.SepetimItemTemplate"
+             xmlns:helpers="clr-namespace:GittiGidiyor.Helpers">
+    <ContentView.Content>
+
+        <Grid
+            BackgroundColor="{StaticResource WhiteColor}"
+            ColumnDefinitions="Auto,*" 
+            HeightRequest="130" 
+            VerticalOptions="CenterAndExpand">
+            <Image
+                Grid.Column="0"
+                Source="{Binding ProductPicUrl}"
+                Aspect="AspectFill"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Margin="10,10,10,0"
+                HeightRequest="60"
+                WidthRequest="40"/>
+            <StackLayout Grid.Column="1" Spacing="1">
+                <Label 
+                                    Text="{Binding SupplierName}" 
+                                    FontSize="{x:StaticResource FontSize12}"
+                                    TextColor="{x:StaticResource BlackColor}"/>
+                <Label 
+                                    Text="{Binding Name}" 
+                                    FontSize="{x:StaticResource FontSize16}"
+                                    TextColor="{x:StaticResource BlackColor}"/>
+                <Label 
+                                    Text="{Binding Price,StringFormat='{0}TL'}"
+                                    Margin="0,7"
+                                    FontSize="{x:StaticResource FontSize14}"
+                                    TextColor="{x:StaticResource BlackColor}"/>
+                <Grid ColumnDefinitions="Auto,Auto">
+                    <Label
+                            VerticalOptions="Center"
+                            Grid.Column="0"
+                            TextColor="{StaticResource GreenColor}"
+                            FontFamily="FAsolid"
+                            FontSize="{StaticResource FontSize14}"
+                            Text="{x:Static helpers:FAIcons.Truck}"/>
+                    <Label
+                            VerticalOptions="Center"
+                            Grid.Column="1"
+                            TextColor="{StaticResource GreenColor}"
+                            FontSize="{StaticResource FontSize14}"
+                            Text="Ucretsiz Kargo"/>
+                </Grid>
+                <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto" Margin="0,5">
+                    <Button
+                            Grid.Column="0"
+                            Text="Sil" 
+                            FontSize="{x:StaticResource FontSize12}"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="{StaticResource WhiteColor}"
+                            Padding="3"
+                            TextColor="{StaticResource SoftBlueColor}"/>
+                    <!--<Label 
+                                        Grid.Column="0"
+                                        Text="Sil" 
+                                        FontSize="{x:StaticResource FontSize12}"
+                                        TextColor="{x:StaticResource SoftBlueColor}"/>-->
+                    <Label 
+                                        Grid.Column="1"
+                                        Text=" | " 
+                                        FontSize="{x:StaticResource FontSize12}"
+                                        TextColor="{x:StaticResource SoftBlueColor}"/>
+                    <Button
+                            Grid.Column="2"
+                            Text="Sonra Alacagim" 
+                            Clicked="Button_Clicked_1"
+                            FontSize="{x:StaticResource FontSize12}"
+                            BackgroundColor="{StaticResource WhiteColor}"
+                            Padding="3"
+                            TextColor="{StaticResource SoftBlueColor}"/>
+
+                    <!--<Label 
+                                        Grid.Column="2"
+                                        Text="Sonra Alacagim" 
+                                        FontSize="{x:StaticResource FontSize12}"
+                                        TextColor="{x:StaticResource SoftBlueColor}"/>-->
+                    <Label 
+                                        Grid.Column="4"
+                                        Text=" | " 
+                                        FontSize="{x:StaticResource FontSize12}"
+                                        TextColor="{x:StaticResource SoftBlueColor}"/>
+                    <Label 
+                                        Grid.Column="5"
+                                        Text="Adet" 
+                                        FontSize="{x:StaticResource FontSize12}"
+                                        TextColor="{x:StaticResource SoftBlueColor}"/>
+
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

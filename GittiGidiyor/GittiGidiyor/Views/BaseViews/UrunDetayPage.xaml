@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Views.BaseViews.UrunDetayPage"
+             xmlns:helpers="clr-namespace:GittiGidiyor.Helpers">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="6">
+        <Grid
+            x:Name="UrunContent"
+            RowDefinitions="Auto,Auto">
+                <Label
+                    Grid.Row="0"
+                    Text="{Binding Name}"
+                    TextColor="{StaticResource BlackColor}"
+                    FontSize="Medium"/>
+                <Grid
+                    Grid.Row="1"
+                    ColumnDefinitions="Auto,Auto,Auto,Auto,Auto">
+                    <Label
+                        Grid.Column="0"
+                        FontFamily="FAsolid"
+                        VerticalOptions="Center"
+                        Text="{x:Static helpers:FAIcons.Star}"
+                        TextColor="Yellow"
+                        HorizontalTextAlignment="Start"
+                        FontSize="Small"
+                        />
+                    <Label
+                        Grid.Column="1"
+                        FontFamily="FAsolid"
+                        VerticalOptions="Center"
+                        Text="{x:Static helpers:FAIcons.Star}"
+                        TextColor="Yellow"
+                        HorizontalTextAlignment="Start"
+                        FontSize="Small"
+                        />
+                    <Label
+                        Grid.Column="2"
+                        FontFamily="FAsolid"
+                        VerticalOptions="Center"
+                        Text="{x:Static helpers:FAIcons.Star}"
+                        TextColor="Yellow"
+                        HorizontalTextAlignment="Start"
+                        FontSize="Small"
+                        />
+                    <Label
+                        Grid.Column="3"
+                        FontFamily="FAsolid"
+                        VerticalOptions="Center"
+                        Text="{x:Static helpers:FAIcons.Star}"
+                        TextColor="Yellow"
+                        HorizontalTextAlignment="Start"
+                        FontSize="Small"
+                        />
+                    <Label
+                        Grid.Column="4"
+                        FontFamily="FAsolid"
+                        VerticalOptions="Center"
+                        Text="{x:Static helpers:FAIcons.Star}"
+                        TextColor="Yellow"
+                        HorizontalTextAlignment="Start"
+                        FontSize="Small"
+                        />
+                    <Label
+                        Grid.Column="5"
+                        FontFamily="FAragular"
+                        VerticalOptions="Center"
+                        Text="{x:Static helpers:FAIcons.Star}"
+                        TextColor="Yellow"
+                        HorizontalTextAlignment="Start"
+                        FontSize="Small"
+                        />
+                </Grid>
+            </Grid>
+            <Image
+               Source="{Binding ProductPicUrl}"
+               Aspect="AspectFill"
+               Grid.Row="0"
+               HeightRequest="200"
+               WidthRequest="200"
+               VerticalOptions="Start"
+               HorizontalOptions="CenterAndExpand"
+               />
+            <Label
+                FontFamily="FAragular"
+                VerticalOptions="Center"
+                Text="{Binding Price, StringFormat='{0}TL'}"
+                TextColor="{StaticResource BlackColor}"
+                HorizontalTextAlignment="Start"
+                FontSize="{StaticResource FontSize14}"
+                />
+             <Button
+                 Text="Sepete Ekle"
+                 BorderColor="{StaticResource SoftBlueColor}"
+                 BackgroundColor="{StaticResource WhiteColor}"
+                 TextColor="{StaticResource SoftBlueColor}"
+                 VerticalOptions="Center"
+                 HorizontalOptions="CenterAndExpand"
+                 Clicked="Button_Clicked"
+                 WidthRequest="300"/>
+            <Button
+                 Text="Hemen Al"
+                 BorderColor="{StaticResource SoftBlueColor}"
+                 BackgroundColor="{StaticResource SoftBlueColor}"
+                 TextColor="{StaticResource WhiteColor}"
+                 VerticalOptions="Center"
+                 HorizontalOptions="CenterAndExpand"
+                 WidthRequest="300"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

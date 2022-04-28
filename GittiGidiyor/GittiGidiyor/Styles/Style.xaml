@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GittiGidiyor.Styles.Style"
+                xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+
+    <Style x:Key="TabViewItemStyle" TargetType="xct:TabViewItem">
+        <Setter Property="TextColor" Value="#B9B9B9" />
+        <Setter Property="TextColorSelected" Value="#2E5DEB" />
+    </Style>
+
+    <ControlTemplate x:Key="TabItemTemplate">
+        <Grid RowSpacing="0" VerticalOptions="Center"
+                      RowDefinitions="Auto,Auto">
+            <Image
+                        Grid.Row="0"
+                        Margin="6"
+                        HeightRequest="36"
+                        HorizontalOptions="Center"
+                        Source="{TemplateBinding CurrentIcon}"
+                        VerticalOptions="Center"
+                        WidthRequest="36" />
+            <Label
+                        Grid.Row="1"
+                        FontSize="{TemplateBinding FontSize}"
+                        HorizontalOptions="Center"
+                        Text="{TemplateBinding Text}"
+                        TextColor="{TemplateBinding CurrentTextColor}" />
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>
